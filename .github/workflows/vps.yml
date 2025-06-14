@@ -1,0 +1,15 @@
+name: Start VPS with V2Ray
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start a temporary VPS
+        run: |
+          sudo apt update && sudo apt install curl -y
+          bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+          echo "VPS started successfully"
+          sleep 21600  # 6 hours
